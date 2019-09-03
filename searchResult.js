@@ -1,10 +1,15 @@
+//get the url from the window and parse the search text
 var url = window.location.href
 url = new URL(url)
 var searchQuery = url.searchParams.get('search')
 var pageNo = 1
+//set the search box value to searchQuery
 document.getElementById("search").value = localStorage.getItem('searchQuery')
+//if there is a valid searchQuery make a request
 if(searchQuery != undefined || searchQuery != null)
     makeRequest()
+
+//create new elements for every movie 
 function addResult(movie){
     var newElement = '<div class="result"> <div class="result-poster"> <a href="movie.html?title='+ movie.imdbID+'"><img src="'
     newElement+=movie.Poster;
@@ -19,17 +24,17 @@ function addResult(movie){
     document.getElementsByClassName('results-container')[0].innerHTML+=newElement
     // console.log(movie)
 }
-
+//load more
 function loadMore(){
     // console.log(pageNo)
     makeRequest()
 }
-
-function displayNoResults(){
-    var element = '<div class ="no-result"><h1>Aw, Snap!<br/> No Movies Found</h1></div>'
+//incase of false response then display no results
+function displayNoResults(msg){
+    var element = '<div class ="no-result"><h1>Aw, Snap!<br/>'+msg +'</h1></div>'
     document.getElementsByClassName('results-container')[0].innerHTML=element
 }
-
+//store the results in the localStorage
 function storeSearchResult(data){
     if (typeof (Storage) !== "undefined") {
         if(localStorage.getItem(data.searchQuery) == null)
@@ -62,9 +67,11 @@ function storeSearchKeyword(key){
         alert("Sorry, your browser does not support web storage...");
     }
 }
+
+//make a request using fetch
 function makeRequest(){
     if(searchQuery !== undefined && searchQuery != null){
-        var omdburl = "http://www.omdbapi.com/?s="+searchQuery+"&apikey=943ff609&page="+(pageNo++)
+        var omdburl = "https://www.omdbapi.com/?s="+searchQuery+"&apikey=943ff609&page="+(pageNo++)
         var res = fetch(omdburl).then(
             response => response.json()).then(
                 result => {
@@ -80,10 +87,12 @@ function makeRequest(){
                             addResult(element)
                         });
                     }else{
-                        displayNoResults()
+                        displayNoResults("No movies found")
                     }
                 }
-            )
+            ).catch(error => {
+                displayNoResults("Failed fetching movies!")
+            })
     }else{
         var key = localStorage.getItem("searchQuery")
         var data = JSON.parse(localStorage.getItem(key))

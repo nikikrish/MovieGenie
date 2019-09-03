@@ -3,7 +3,7 @@ url = new URL(url)
 var searchQuery = url.searchParams.get('title')
 // console.log(searchQuery)
 if(searchQuery !== undefined && searchQuery != null){
-    var res = fetch("http://www.omdbapi.com/?i="+searchQuery+"&apikey=943ff609").then(
+    var res = fetch("https://www.omdbapi.com/?i="+searchQuery+"&apikey=943ff609").then(
         response => response.json()).then(
             result => {
                 // console.log(result)
@@ -11,10 +11,11 @@ if(searchQuery !== undefined && searchQuery != null){
             }
         )
 }
+//update the value in the search box
 document.getElementById("search").value = localStorage.getItem('searchQuery')
-// displayMovie()
 
-  function displayMovie(data){
+//function to display the Movie details
+function displayMovie(data){
       var element = '<div class="movie-title"><b>'
       element+=data.Title+'</b></div><div class="movie-details"><span>'
       element+=data.Runtime+'</span><span>'

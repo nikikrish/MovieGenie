@@ -47,6 +47,17 @@ form{
     font-family: 'Nunito Sans';
     text-align: center
 }
+@media (min-width:411px){
+    .back{
+        margin-left: -30px;
+    }
+    form{
+        margin-left:30px;
+    }
+    .search-box{
+        width:160px;
+    }
+}
 @media (max-width:375px){
     .back{
         margin-left: -25px;
@@ -54,6 +65,7 @@ form{
     form{
         margin-left:25px;
     }
-
-
+    .search-box{
+        width:150px;
+    }
 }

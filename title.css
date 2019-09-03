@@ -34,7 +34,55 @@ body{
     display: flex;
 }
 
+@media (max-width:414px){
+    .movie-container{
+        padding:10px;
+    }
+    .movie-title{
+        font-family: 'Nunito Sans';
+        font-size: 25px;
+    }
+    .movie-details span{
+        padding-right: 3px;
+    }
+    .movie-plot{
+        width: 55%;
+        padding:20px 0 10px 0 ;
+    }
+    .movie-poster img{
+        height: 175px;
+        position: absolute;
+        right:0;
+        margin-top:-15px;
+        max-height: 175px;
+        padding-right:15px;
+    }
+}
 
+@media (min-width:411px){
+    .movie-container{
+        padding:10px;
+    }
+    .movie-title{
+        font-family: 'Nunito Sans';
+        font-size: 25px;
+    }
+    .movie-details span{
+        padding-right: 3px;
+    }
+    .movie-plot{
+        width: 55%;
+        padding:20px 0 10px 0 ;
+    }
+    .movie-poster img{
+        height: 175px;
+        position: absolute;
+        right:0;
+        margin-top:-30px;
+        max-height: 175px;
+        padding-right:15px;
+    }
+}
 @media (max-width:375px){
     .movie-container{
         padding:10px;
@@ -54,7 +102,7 @@ body{
         height: 175px;
         position: absolute;
         right:0;
-        top:25%;
+        top:20%;
         max-height: 175px;
         padding-right:15px;
     }
