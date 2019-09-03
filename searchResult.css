@@ -1,0 +1,128 @@
+.result-description{
+    position: relative;
+    height: 60px;
+    background: #1b2530;
+    color: white;
+    max-height: 60px;
+    border-radius: 0 0 3px 3px;
+}
+
+.result-title {
+    color: white;
+    font-family: 'Nunito Sans';
+    font-weight: 800;
+    font-size: 15px;
+    text-decoration: none;
+    max-height: 140px;
+    padding-left:7px;
+    padding-top:7px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.result-title a{
+    color: white;
+    font-family: 'Nunito Sans';
+    font-weight: 800;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.results-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.result-rating{
+    font-size: 12px;
+    font-family: 'Nunito Sans';
+    color: #B1B1B1;
+    padding-left: 7px;
+    padding-top: 7px;
+}
+span{
+    padding:2px;
+    text-transform: capitalize;
+}
+.result {
+    max-width: 147px;
+    border-radius: 5px;
+    padding: 10px
+}
+img{
+    height: auto;
+    width:147px;
+    border-radius: 7px 7px 0 0;
+    min-height:220px;
+    max-height: 220px;
+}
+body {
+    background-color: #f3f3f3;
+    margin: 0;
+}
+
+.btn {
+    position: relative;
+  
+    display: block;
+    margin: 30px auto;
+    padding: 0;
+  
+    overflow: hidden;
+  
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    
+    background-color: #4facfe;
+    color: #ecf0f1;
+    
+    transition: background-color .3s;
+  }
+  
+  .btn:hover, .btn:focus {
+    background-color: #4facfe;
+  }
+
+
+.btn > * {
+    position: relative;
+  }
+  
+  .btn span {
+    display: block;
+    padding: 12px 24px;
+  }
+  
+  .btn:before {
+    content: "";
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    display: block;
+    width: 0;
+    padding-top: 0;
+      
+    border-radius: 100%;
+    
+    background-color: rgba(236, 240, 241, .3);
+    
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
+  .btn:active:before {
+    width: 120%;
+    padding-top: 120%;
+    
+    transition: width .2s ease-out, padding-top .2s ease-out;
+  }
+  
+
+

@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Search Results</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="searchResult.css" rel="stylesheet" >
+        <link href="header.css" rel="stylesheet" >
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,800&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="header-fixed">
+            <div class="header-title">
+                <a href="index.html">
+                    <div class="title">Movie <b>Genie</b></div>
+                </a>
+            </div>
+            <form action="" method="GET" >
+                <input class="search-box" name='search' id="search" type="text" placeholder="Search"/>
+            </form>
+        </header>
+        <div class="results-container">
+        </div>
+        <div class="loadMore">
+            <button class="btn" type="button" onclick="loadMore()"><span>Load More</span></button>
+        </div>
+        <script src="searchResult.js"> </script>
+    </body>
+</html>
